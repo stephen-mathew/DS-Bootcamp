@@ -10,7 +10,7 @@ Ans: _`[]` is an empty list, or a list with 0 elements._
 
 **Q2. In a list of values stored in a variable called `spam`, how would you assign the value `'hello'` as the third value? _(Assume [2, 4, 6, 8, 10] are in `spam`.)_**
 
-Ans: _This can be done using `spam.insert(2)`_ 
+Ans: _This can be done using `spam.insert(2,'hello')`_ 
 
 - - - 
 
@@ -54,55 +54,55 @@ Ans: _It becomes `[3.14,  11, 'cat', True, 99]`_
 
 **Q9. What are the list concatenation and list replication operators?**
 
-Ans: __ 
+Ans: _Concatenation can be done using the `+` operator and replication can be done using the `*` operator._ 
 
 - - - 
 
-**Q10. What is difference between the list methods append() and insert()?**
+**Q10. What is difference between the list methods `append()` and `insert()`?**
 
-Ans: __ 
+Ans: _`append()` adds the element to the end of the list, whereas `insert()` adds the element at the specified index_ 
 
 - - - 
 
 **Q11. What are the two methods for removing items from a list?**
 
-Ans: __ 
+Ans: _`pop()` and `remove()`_ 
 
 - - - 
 
 **Q12. Describe how list values and string values are identical.**
 
-Ans: __ 
+Ans: _A string is a list of characters. Most list operations will apply to strings too._ 
 
 - - - 
 
 **Q13. What's the difference between tuples and lists?**
 
-Ans: __ 
+Ans: _Tuples are immutable whereas lists are mutable._ 
 
 - - - 
 
-**Q14. How do you type a tuple value that only contains the integer 42?**
+**Q14. How do you type a tuple value that only contains the integer `42`?**
 
-Ans: __ 
+Ans: _`(42)`_ 
 
 - - - 
 
 **Q15. How do you get a list value's tuple form? How do you get a tuple value's list form?**
 
-Ans: __ 
+Ans: _`tuple(<list>)` can be used to get the list's tuple form. Similarly, `list(<tuple>)` can be used to get the tuple's list form._ 
 
 - - - 
 
 **Q16. Variables that "contain" list values are not necessarily lists themselves. Instead, what do they contain?**
 
-Ans: __ 
+Ans: _The variable contains the reference to the list object._ 
 
 - - - 
 
-**Q17. How do you distinguish between copy.copy() and copy.deepcopy()?**
+**Q17. How do you distinguish between `copy.copy()` and `copy.deepcopy()`?**
 
-Ans: __ 
+Ans: _The assignment operator `=` does not create a new object but only assigns the reference of the object to a new variable. In the case of `copy.copy()`, a new object is created. This new object, would store the references of the original object's nested objects. In the case of `copy.deepcopy()` also a new object is created. Additionally, copies of the nested objects of the original object are also created recursively._ 
 
 - - - 
 
