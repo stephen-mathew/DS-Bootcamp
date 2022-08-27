@@ -86,3 +86,108 @@ update bank_details set `default` = 'NULL' where `default` = 'no'
 delete from bank_details
 where job='unknown'
 
+DELIMITER &&
+
+create procedure select_pre()
+BEGIN
+	select * from bank_details;
+END &&
+
+call select_pre()
+
+
+DELIMITER &&
+
+create procedure select_pre2(IN var1 int)
+BEGIN
+	select * from bank_details where job='retired' and balance>var1;
+END &&
+
+call select_pre2(100)
+
+
+DELIMITER &&
+
+create procedure select_pre3(IN var1 int, IN var2 varchar(30))
+BEGIN
+	select * from bank_details where job=var2 and balance>var1;
+END &&
+
+call select_pre3(100,'services')
+
+select *
+from
+(select job, age, education, y
+from bank_details) as a 
+where a.age=58
+
+create view bank_view
+as
+select job, age, education, y 
+from bank_details
+
+select *
+from bank_view 
+where age=58
+
+
+
+create table if not exists bank_details1 
+(
+age int,
+job varchar(30),
+marital varchar(30),
+education varchar(30),
+`default` varchar(30),
+balance int,
+housing varchar(30),
+loan varchar(30),
+contact varchar(30),
+`day` int,
+`month` varchar(30),
+duration int,
+campaign int,
+pdays int,
+previous int,
+poutcome varchar(30),
+y varchar(30)
+)
+
+
+insert into bank_details1 select * from bank_details
+
+select bank_details1.age, bank_details1.job, bank_details1.marital 
+from bank_details
+inner join bank_details1 on bank_details.age = bank_details1.age
+
+
+select *
+from bank_details1
+
+insert into bank_details1 values (
+37, 
+'product manager',	
+'single', 
+'tertiary',
+NULL,
+2,
+'yes',
+'yes',
+'unknown',
+5,
+'may',
+76,	
+1,
+-1,
+0,	
+'unknown',
+'no'
+)
+
+
+insert into steve.bank_details1 values (37,'product manager','single','tertiary','NULL',2,'yes','yes','unknown',5,'may',76,1,-1,0,'unknown','no')
+
+
+select *
+from steve.bank_details1
+where age = 37
